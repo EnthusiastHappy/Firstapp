@@ -1,0 +1,64 @@
+import kivy
+from kivy.app import App
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.label import Label
+from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
+
+class childApp(GridLayout):
+    def __init__(self,**kwargs):
+        super(childApp, self).__init__()
+        self.cols = 2
+        self.add_widget(Label(text = 'Student Name'))
+        self.s_name = TextInput()
+        self.add_widget(self.s_name)
+
+        self.add_widget(Label(text = 'Student Marks'))
+        self.s_marks = TextInput()
+        self.add_widget(self.s_marks)
+
+        self.add_widget(Label(text='Student Gender'))
+        self.s_gender = TextInput()
+        self.add_widget(self.s_gender)
+
+class parentApp(App):
+    def build(self):
+        return childApp()
+
+if __name__ == "__main__":
+    parentApp().run()
+
+
+
+OUTPUT
+
+"C:\Users\Dilraj Patheja\PycharmProjects\firstproject\venv\Scripts\python.exe" "C:/Users/Dilraj Patheja/PycharmProjects/firstproject/newapp.py"
+[INFO   ] [Logger      ] Record log in C:\Users\Dilraj Patheja\.kivy\logs\kivy_21-09-19_2.txt
+[INFO   ] [deps        ] Successfully imported "kivy_deps.angle" 0.3.0
+[INFO   ] [deps        ] Successfully imported "kivy_deps.glew" 0.3.0
+[INFO   ] [deps        ] Successfully imported "kivy_deps.sdl2" 0.3.1
+[INFO   ] [Kivy        ] v2.0.0
+[INFO   ] [Kivy        ] Installed at "C:\Users\Dilraj Patheja\PycharmProjects\firstproject\venv\lib\site-packages\kivy\__init__.py"
+[INFO   ] [Python      ] v3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)]
+[INFO   ] [Python      ] Interpreter at "C:\Users\Dilraj Patheja\PycharmProjects\firstproject\venv\Scripts\python.exe"
+[INFO   ] [Factory     ] 186 symbols loaded
+[INFO   ] [Image       ] Providers: img_tex, img_dds, img_sdl2 (img_pil, img_ffpyplayer ignored)
+[INFO   ] [Text        ] Provider: sdl2
+[INFO   ] [Window      ] Provider: sdl2
+[INFO   ] [GL          ] Using the "OpenGL" graphics system
+[INFO   ] [GL          ] GLEW initialization succeeded
+[INFO   ] [GL          ] Backend used <glew>
+[INFO   ] [GL          ] OpenGL version <b'4.4.0 - Build 21.20.16.4627'>
+[INFO   ] [GL          ] OpenGL vendor <b'Intel'>
+[INFO   ] [GL          ] OpenGL renderer <b'Intel(R) Iris(TM) Graphics 540'>
+[INFO   ] [GL          ] OpenGL parsed version: 4, 4
+[INFO   ] [GL          ] Shading version <b'4.40 - Build 21.20.16.4627'>
+[INFO   ] [GL          ] Texture max size <16384>
+[INFO   ] [GL          ] Texture max units <32>
+[INFO   ] [Window      ] auto add sdl2 input provider
+[INFO   ] [Window      ] virtual keyboard not allowed, single mode, not docked
+[INFO   ] [Base        ] Start application main loop
+[INFO   ] [GL          ] NPOT texture support is available
+[INFO   ] [Base        ] Leaving application in progress...
+
+Process finished with exit code 0
